@@ -12,6 +12,7 @@ services:
       - --log-bin=mariadb-bin
       - --binlog-format=ROW
       - --binlog-row-image=FULL
+      - --binlog-legacy-event-pos=ON
       - --server-id=1
       - --binlog-expire-logs-seconds=172800
       - --innodb-buffer-pool-size=256M
