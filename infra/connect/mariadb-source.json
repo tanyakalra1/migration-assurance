@@ -1,0 +1,19 @@
+{
+  "name": "erp-mariadb-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.mariadb.MariaDbConnector",
+    "tasks.max": "1",
+    "database.hostname": "mariadb",
+    "database.port": "3306",
+    "database.user": "debezium",
+    "database.password": "${DEBEZIUM_PASSWORD}",
+    "database.server.id": "184054",
+    "topic.prefix": "erp",
+    "database.include.list": "erp",
+    "table.include.list": "erp.customers,erp.items,erp.warehouses,erp.sales_orders,erp.sales_order_lines,erp.stock_ledger,erp.gl_entries",
+    "include.schema.changes": "false",
+    "snapshot.mode": "initial",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:29092",
+    "schema.history.internal.kafka.topic": "schema-changes.erp"
+  }
+}
